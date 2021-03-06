@@ -8,15 +8,20 @@ const BookForm = () => {
       <input type="text" placeholder="pls write your book title" />
       <select>
         {
-          categories.map(cat => {
+          categories.map(cat => (
             <option key={categories.indexOf(cat)} value={cat}>
               {' '}
               {cat}
               {' '}
-            </option>;
-          })
+            </option>
+          ))
         }
       </select>
+      <button type="button" value="submit">
+        submit
+      </button>
     </form>
   );
 };
+
+export default BookForm;
