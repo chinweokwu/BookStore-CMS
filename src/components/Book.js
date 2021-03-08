@@ -2,23 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line arrow-body-style
-const Book = ({ book }) => {
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <td>{book.title}</td>
-            <td>{book.category}</td>
-            <td>{book.id}</td>
-          </tr>
-          ;
-        </thead>
-      </table>
-    </div>
-  );
-};
+const Book = ({ book }) => (
+  <tr>
+    <td>{book.title}</td>
+    <td>{book.category}</td>
+    <td>{book.id}</td>
+  </tr>
+);
 
 Book.propTypes = {
   book: PropTypes.object.isRequired,
