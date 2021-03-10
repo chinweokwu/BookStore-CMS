@@ -118,6 +118,17 @@ body {
 }
 
 .submit-button {
-  width: 156px;
+  width: 144px;
   height: 45px;
+  border-radius: 3px;
+  color: white;
+  background-color: $blue-color;
+  font-family: RobotoSlab;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
