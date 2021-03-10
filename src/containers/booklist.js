@@ -22,29 +22,32 @@ const BookList = ({
   };
   const books = bookFilter(filter);
   return (
-    <div>
-      <h1>Book List</h1>
-      <div>
-        <CategoryFilter bookfilters={handleFilterChange} />
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(book => (
-            <Book
-              key={book.id}
-              book={book}
-              handleRemoveBook={handleRemoveBook}
-            />
-          ))}
-        </tbody>
-      </table>
+    <div className="booklist">
+      <header className="panel-bg Line">
+        <div className="bookleft">
+          <h1 className="booklist-logo">Bookstore CMS</h1>
+          <p className="bookstore-cms book-nav">BOOKS</p>
+          <p className="bookstore-cms categories">
+            CATEGORIES
+            <span>
+              {' '}
+              <CategoryFilter bookfilters={handleFilterChange} />
+            </span>
+          </p>
+        </div>
+        <div className="booklist-user">
+          <i className="far fa-user-circle" />
+        </div>
+      </header>
+      <main className="booklist-book">
+        {books.map(book => (
+          <Book
+            key={book.id}
+            book={book}
+            handleRemoveBook={handleRemoveBook}
+          />
+        ))}
+      </main>
     </div>
   );
 };

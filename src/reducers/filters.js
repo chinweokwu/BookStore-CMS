@@ -1,10 +1,10 @@
 import { CHANGE_FILTER } from '../actions/actionType';
 
-const bookFiltersReducers = (state = '', action) => {
+const bookFiltersReducers = (state = 'All', action) => {
   switch (action.type) {
     case CHANGE_FILTER:
       return (
-        action.payload === 'ALL' ? '' : action.payload
+        action.payload
       );
     default: return state;
   }

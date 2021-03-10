@@ -17,7 +17,6 @@ const BookForm = ({ createBook }) => {
       id: Math.floor(Math.random() * 100) + 1,
     }));
   };
-  // console.log(handleChange());
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -29,10 +28,13 @@ const BookForm = ({ createBook }) => {
   };
 
   return (
-    <form>
-      <input type="text" placeholder="pls write your book title" name="title" value={book.title} onChange={handleChange} />
-      <select type="text" onChange={handleChange} value={book.category} name="category" required>
-        {
+    <div className="bookform">
+      <p className="Line" />
+      <h2>ADD NEW FORM</h2>
+      <form>
+        <input type="text" className="input-form" placeholder="Book Title" name="title" value={book.title} onChange={handleChange} />
+        <select type="text" className="select-form" onChange={handleChange} value={book.category} name="category" required>
+          {
           categories.map(cat => (
             <option key={categories.indexOf(cat)} value={cat}>
               {' '}
@@ -41,11 +43,12 @@ const BookForm = ({ createBook }) => {
             </option>
           ))
         }
-      </select>
-      <button type="button" value="submit" onClick={handleSubmit}>
-        submit
-      </button>
-    </form>
+        </select>
+        <button type="button" value="submit" onClick={handleSubmit} className="submit-button">
+          submit
+        </button>
+      </form>
+    </div>
   );
 };
 
